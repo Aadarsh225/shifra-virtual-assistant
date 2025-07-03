@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background: radial-gradient(ellipse at center, #000000 0%, #0a0a0a 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+#logo {
+    width: 20vw;
+    animation: pulseGlow 3s infinite;
+    filter: drop-shadow(0 0 30px #08f) drop-shadow(0 0 60px #0ff);
+}
+
+h1 {
+    color: aliceblue;
+    font-family: "Protest Guerrilla", sans-serif;
+    font-size: 2.2rem;
+    text-align: center;
+    text-shadow: 0 0 10px #00f6ff, 0 0 20px #00d4ff;
+    animation: flicker 2s infinite;
+}
+
+#name {
+    color: #ff007c;
+    font-size: 50px;
+    text-shadow: 0 0 10px #ff007c, 0 0 20px #ff00d4;
+}
+
+#va {
+    color: #00f6ff;
+    font-size: 50px;
+    text-shadow: 0 0 10px #00f6ff, 0 0 20px #00d4ff;
+}
+
+#voice {
+    width: 150px;
+    display: none;
+    animation: float 3s ease-in-out infinite;
+    filter: drop-shadow(0 0 10px #0ff);
+}
+
+#btn {
+    width: 30%;
+    background: linear-gradient(135deg, #1581ff, #ff2974);
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-size: 20px;
+    border-radius: 30px;
+    color: white;
+    border: none;
+    transition: all 0.5s ease;
+    cursor: pointer;
+    box-shadow: 0 0 15px #00f6ff, 0 0 30px #ff00d4;
+    backdrop-filter: blur(10px);
+    font-weight: bold;
+}
+
+#btn:hover {
+    box-shadow: 0 0 30px #1581ff, 0 0 30px #ff2974;
+    letter-spacing: 2px;
+    transform: scale(1.05);
+}
+
+/* --- Animations --- */
+
+@keyframes pulseGlow {
+    0%, 100% {
+        filter: drop-shadow(0 0 10px #08f) drop-shadow(0 0 30px #0ff);
+    }
+    50% {
+        filter: drop-shadow(0 0 20px #08f) drop-shadow(0 0 50px #0ff);
+    }
+}
+
+@keyframes flicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        opacity: 1;
+    }
+    20%, 24%, 55% {
+        opacity: 0.4;
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
